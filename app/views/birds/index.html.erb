@@ -1,0 +1,21 @@
+<%= form_for @bird do |f| %>
+<p>
+  <%= f.label :name %>
+<%= f.text_field :name %>
+</p>
+  <p>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.submit 'Create Bird' %>
+  </p>
+<% end %>
+
+<% @birds.each do |bird| %>
+<ul>
+  <li>
+    <%= bird.name %>, <%= bird.color %>
+  </li>
+</ul>
+<% end %>
