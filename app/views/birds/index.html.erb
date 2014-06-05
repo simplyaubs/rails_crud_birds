@@ -15,7 +15,7 @@
 <% @birds.each do |bird| %>
 <ul>
   <li>
-    <%= bird.name %>, <%= bird.color %>
+    <%= link_to "#{bird.name}", bird_path(bird) %>, <%= bird.color %>
   </li>
 </ul>
 <% end %>
