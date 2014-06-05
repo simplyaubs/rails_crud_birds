@@ -31,4 +31,20 @@ feature 'CRUD favorite birds' do
     expect(page).to_not have_content 'Blue Jay'
     expect(page).to_not have_content 'Blue'
   end
+
+  scenario 'user can delete a bird' do
+    visit '/'
+    expect(page).to have_content 'Welcome'
+    click_on 'Add Bird'
+    fill_in 'Name', with: 'Blue Jay'
+    fill_in 'Color', with: 'Blue'
+    click_on 'Create Bird'
+    expect(page).to have_content 'Blue Jay'
+    expect(page).to have_content 'Blue'
+    click_on 'Blue Jay'
+    click_on 'Delete'
+    expect(page).to_not have_content 'Blue Jay'
+    expect(page).to_not have_content 'Blue'
+  end
+
 end

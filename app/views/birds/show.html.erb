@@ -2,4 +2,5 @@
   <li><%= @bird.name %>, <%= @bird.color %></li>
 </ul>
 
-<%= link_to 'Edit', edit_bird_path(@bird) %>
+<%= link_to 'Edit', edit_bird_path(@bird) %> |
+<%= link_to 'Delete', bird_path(@bird), method: :delete %>

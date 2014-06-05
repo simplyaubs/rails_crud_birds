@@ -29,6 +29,12 @@ class BirdsController < ApplicationController
     redirect_to bird_path(@bird)
   end
 
+  def destroy
+    @bird = Bird.find(params[:id]).delete
+
+    redirect_to birds_path
+  end
+
   private
   def bird_params
     params.require(:bird).permit(:name, :color)
